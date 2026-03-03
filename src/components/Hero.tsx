@@ -26,7 +26,7 @@ export default function Hero() {
                 className="absolute inset-0 z-0"
             >
                 <img
-                    src="https://images.unsplash.com/photo-1585320806297-9794b3e4ce88?q=80&w=2070&auto=format&fit=crop"
+                    src="/images/hero.png"
                     alt="Greenhouse interior with lush plants"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"

@@ -57,7 +57,7 @@ export default function About() {
                         <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative group">
                             <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
                             <img
-                                src="https://images.unsplash.com/photo-1599598425947-33002629ec8f?q=80&w=1974&auto=format&fit=crop"
+                                src="/images/about.png"
                                 alt="Lush green plants"
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                 referrerPolicy="no-referrer"
