@@ -3,13 +3,13 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 
 export default function Inventory() {
     const categories = [
-        { name: 'Azaleas', img: 'https://images.unsplash.com/photo-1586375063704-585866418b76?q=80&w=1974&auto=format&fit=crop' },
+        { name: 'Azaleas', img: '/images/inventory_azalea.png' },
         { name: 'Ground Cover', img: 'https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=1974&auto=format&fit=crop' },
         { name: 'Juniper', img: 'https://images.unsplash.com/photo-1611078813353-810cb990924b?q=80&w=1974&auto=format&fit=crop' },
         { name: 'Ornamental Grass', img: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1973&auto=format&fit=crop' },
         { name: 'Boxwood', img: 'https://images.unsplash.com/photo-1628148906666-88899803135a?q=80&w=1974&auto=format&fit=crop' },
         { name: 'Perennials', img: 'https://images.unsplash.com/photo-1558350315-8aa00e8e4590?q=80&w=1974&auto=format&fit=crop' },
-        { name: 'Trees', img: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1976&auto=format&fit=crop' },
+        { name: 'Trees', img: '/images/inventory_trees.png' },
         { name: 'Gardenia', img: 'https://images.unsplash.com/photo-1596438459194-f28bf74811a4?q=80&w=2070&auto=format&fit=crop' },
     ];
 
