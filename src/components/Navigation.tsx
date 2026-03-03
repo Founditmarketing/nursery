@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Leaf, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,50 +18,39 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${isScrolled
             ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
             : 'bg-transparent py-6'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+            <Link to="/" className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
               <Leaf
-                className={`w-8 h-8 transition-colors duration-500 ${
-                  isScrolled ? 'text-emerald-700' : 'text-emerald-400 group-hover:text-emerald-300'
-                }`}
+                className={`w-8 h-8 transition-colors duration-500 ${isScrolled ? 'text-emerald-700' : 'text-emerald-400 group-hover:text-emerald-300'
+                  }`}
               />
               <span
-                className={`text-xl font-bold tracking-tight transition-colors duration-500 ${
-                  isScrolled ? 'text-stone-900' : 'text-white'
-                }`}
+                className={`text-xl font-bold tracking-tight transition-colors duration-500 ${isScrolled ? 'text-stone-900' : 'text-white'
+                  }`}
               >
                 Southern Roots
               </span>
-            </div>
+            </Link>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
-              {['About', 'Catalog', 'Specials', 'Reviews'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className={`text-sm font-medium transition-all duration-300 ${
-                    isScrolled 
-                      ? 'text-stone-600 hover:text-emerald-700' 
-                      : 'text-stone-200 hover:text-white hover:text-shadow-sm'
-                  }`}
-                >
-                  {item}
-                </a>
-              ))}
-              <a
-                href="#contact"
+              <Link to="/about" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>About</Link>
+              <Link to="/catalog" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Catalog</Link>
+              <Link to="/#specials" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Specials</Link>
+              <Link to="/#reviews" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Reviews</Link>
+
+              <Link
+                to="/contact"
                 className="bg-emerald-700 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -89,29 +79,28 @@ export default function Navigation() {
             className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24 px-4"
           >
             <div className="flex flex-col gap-6 text-center">
-              {['About', 'Catalog', 'Specials', 'Reviews'].map((item, index) => (
-                <motion.a
-                  key={item}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  href={`#${item.toLowerCase()}`}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.4 }}>
+                <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">About</Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.4 }}>
+                <Link to="/catalog" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Catalog</Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.4 }}>
+                <Link to="/#specials" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Specials</Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.4 }}>
+                <Link to="/#reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Reviews</Link>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.4 }}>
+                <Link
+                  to="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors"
+                  className="bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-medium mt-8 shadow-lg inline-block mx-auto"
                 >
-                  {item}
-                </motion.a>
-              ))}
-              <motion.a
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-medium mt-8 shadow-lg inline-block mx-auto"
-              >
-                Contact Us
-              </motion.a>
+                  Contact Us
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

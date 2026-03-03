@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 
 const letterAnimation = {
@@ -113,29 +114,29 @@ export default function Hero() {
                         transition={{ duration: 1, delay: 1.2 }}
                         className="flex flex-col sm:flex-row items-center justify-center gap-5"
                     >
-                        <motion.a
-                            href="#catalog"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
-                        >
-                            Explore Inventory
-                            <motion.div
-                                initial={{ x: 0 }}
-                                whileHover={{ x: 5 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                            <Link
+                                to="/catalog"
+                                className="w-full sm:w-auto bg-emerald-700 hover:bg-emerald-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
                             >
-                                <ArrowRight className="w-5 h-5" />
-                            </motion.div>
-                        </motion.a>
-                        <motion.a
-                            href="#specials"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="w-full sm:w-auto bg-stone-900/40 hover:bg-stone-800/60 text-white backdrop-blur-md border border-white/10 hover:border-white/20 px-8 py-4 rounded-full text-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
-                        >
-                            View Weekly Specials
-                        </motion.a>
+                                Explore Inventory
+                                <motion.div
+                                    initial={{ x: 0 }}
+                                    whileHover={{ x: 5 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                >
+                                    <ArrowRight className="w-5 h-5" />
+                                </motion.div>
+                            </Link>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+                            <Link
+                                to="/#specials"
+                                className="w-full sm:w-auto bg-stone-900/40 hover:bg-stone-800/60 text-white backdrop-blur-md border border-white/10 hover:border-white/20 px-8 py-4 rounded-full text-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                            >
+                                View Weekly Specials
+                            </Link>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             </motion.div>
