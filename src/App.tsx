@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
+import Gallery from './pages/Gallery';
+import PlantList from './pages/PlantList';
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/plant-list" element={<PlantList />} />
         </Routes>
       </div>
 

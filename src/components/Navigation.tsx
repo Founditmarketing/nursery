@@ -19,8 +19,8 @@ export default function Navigation() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${isScrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
-            : 'bg-transparent py-6'
+          ? 'bg-white/90 backdrop-blur-md shadow-sm py-4'
+          : 'bg-transparent py-6'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,9 +39,11 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               <Link to="/about" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>About</Link>
               <Link to="/catalog" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Catalog</Link>
+              <Link to="/plant-list" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Plant List</Link>
+              <Link to="/gallery" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Gallery</Link>
               <Link to="/#specials" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Specials</Link>
               <Link to="/#reviews" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Reviews</Link>
 
@@ -86,9 +88,15 @@ export default function Navigation() {
                 <Link to="/catalog" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Catalog</Link>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.4 }}>
-                <Link to="/#specials" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Specials</Link>
+                <Link to="/plant-list" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Plant List</Link>
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.4 }}>
+                <Link to="/gallery" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Gallery</Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.4 }}>
+                <Link to="/#specials" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Specials</Link>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.4 }}>
                 <Link to="/#reviews" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Reviews</Link>
               </motion.div>
 
