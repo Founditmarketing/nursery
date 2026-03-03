@@ -57,19 +57,22 @@ export default function Specials() {
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {specials.map((item, index) => (
-                        <motion.div
+                        <motion.a
+                            href="mailto:rsrnursery@yahoo.com"
                             key={item}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            whileHover={{ scale: 1.02, x: 5 }}
+                            whileTap={{ scale: 0.98 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                            className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:bg-stone-800 transition-colors flex items-center justify-between group cursor-pointer"
+                            className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:bg-stone-800 hover:border-emerald-900/30 transition-colors flex items-center justify-between group cursor-pointer shadow-lg hover:shadow-2xl hover:shadow-emerald-900/20 block"
                         >
-                            <span className="font-medium text-lg text-stone-200 group-hover:text-white transition-colors tracking-wide">{item}</span>
-                            <a href="mailto:rsrnursery@yahoo.com" className="w-12 h-12 rounded-full bg-stone-800 border border-stone-700 flex items-center justify-center group-hover:bg-emerald-700 group-hover:border-emerald-600 transition-all duration-300 group-hover:rotate-45">
+                            <span className="font-medium text-lg text-stone-200 group-hover:text-emerald-300 transition-colors tracking-wide">{item}</span>
+                            <div className="w-12 h-12 rounded-full bg-stone-800 border border-stone-700 flex items-center justify-center group-hover:bg-emerald-700 group-hover:border-emerald-600 transition-all duration-300 group-hover:rotate-45">
                                 <ChevronRight className="w-5 h-5 text-stone-400 group-hover:text-white transition-colors" />
-                            </a>
-                        </motion.div>
+                            </div>
+                        </motion.a>
                     ))}
                 </div>
             </div>
