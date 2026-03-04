@@ -25,10 +25,28 @@ export default function Reviews() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [width, setWidth] = useState(0);
 
+    // Recalculate width on resize to ensure drag constraints are always accurate
     useEffect(() => {
+        const calculateWidth = () => {
+            if (containerRef.current) {
+                setWidth(containerRef.current.scrollWidth - containerRef.current.offsetWidth);
+            }
+        };
+
+        // Initial calculation
+        calculateWidth();
+
+        // Recalculate if fonts loaded or window resized
+        window.addEventListener('resize', calculateWidth);
+        const resizeObserver = new ResizeObserver(calculateWidth);
         if (containerRef.current) {
-            setWidth(containerRef.current.scrollWidth - containerRef.current.offsetWidth);
+            resizeObserver.observe(containerRef.current);
         }
+
+        return () => {
+            window.removeEventListener('resize', calculateWidth);
+            resizeObserver.disconnect();
+        };
     }, []);
 
     return (
