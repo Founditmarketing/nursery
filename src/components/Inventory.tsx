@@ -47,7 +47,6 @@ export default function Inventory() {
                             whileHover={{
                                 y: -12,
                                 scale: 1.01,
-                                rotateZ: index % 2 === 0 ? 1 : -1,
                             }}
                             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                             transition={{ duration: 0.6, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
@@ -83,7 +82,6 @@ export default function Inventory() {
                         whileHover={{
                             y: -12,
                             scale: 1.01,
-                            rotateZ: 1,
                         }}
                         viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                         transition={{ duration: 0.6, delay: categories.length * 0.05, ease: [0.22, 1, 0.36, 1] }}
