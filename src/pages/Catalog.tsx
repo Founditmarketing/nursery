@@ -11,7 +11,7 @@ export default function Catalog() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="bg-white rounded-[2rem] border-4 border-[#D4D4D4] px-8 py-12 text-center max-w-3xl mx-auto relative z-10 -mb-24"
+                        className="bg-white rounded-[2rem] border-4 border-[#E0E0E0] px-8 py-12 text-center max-w-3xl mx-auto relative z-10 -mb-24"
                     >
                         <h1 className="text-5xl md:text-7xl font-bold text-stone-900 mb-6 tracking-tight">
                             Our <span className="font-serif italic text-emerald-700">Catalog</span>
