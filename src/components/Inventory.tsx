@@ -56,7 +56,7 @@ export default function Inventory() {
                                 <img
                                     src={category.img}
                                     alt={category.name}
-                                    className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-[1.15] group-hover:blur-[2px]"
+                                    className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-[1.15]"
                                     referrerPolicy="no-referrer"
                                 />
                                 <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none" />
