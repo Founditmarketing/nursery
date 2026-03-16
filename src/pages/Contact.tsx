@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Truck } from 'lucide-react';
 
 export default function Contact() {
     return (
@@ -31,13 +31,13 @@ export default function Contact() {
                             <h3 className="text-2xl font-bold text-stone-900 mb-8 border-b border-stone-100 pb-4">Contact Details</h3>
 
                             <div className="space-y-8">
-                                <a href="tel:3187765103" className="flex items-start gap-4 group">
+                                <a href="tel:3182297462" className="flex items-start gap-4 group">
                                     <div className="p-4 rounded-full bg-emerald-50 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
                                         <Phone className="w-6 h-6" />
                                     </div>
                                     <div>
                                         <p className="text-stone-500 font-medium text-sm mb-1 uppercase tracking-wider">Phone</p>
-                                        <p className="text-stone-900 font-semibold text-xl group-hover:text-emerald-700 transition-colors">(318) 776-5103</p>
+                                        <p className="text-stone-900 font-semibold text-xl group-hover:text-emerald-700 transition-colors">(318) 229-7462</p>
                                     </div>
                                 </a>
 
@@ -51,16 +51,30 @@ export default function Contact() {
                                     </div>
                                 </a>
 
-                                <div className="flex items-start gap-4 group">
+                                <div className="flex items-start gap-4">
                                     <div className="p-4 rounded-full bg-emerald-50 text-emerald-700">
                                         <MapPin className="w-6 h-6" />
                                     </div>
                                     <div>
                                         <p className="text-stone-500 font-medium text-sm mb-1 uppercase tracking-wider">Location</p>
                                         <p className="text-stone-900 font-semibold text-xl">
-                                            10350 Highway 71 South<br />
+                                            219 Nick Strange Rd<br />
                                             Lecompte, Louisiana 71346
                                         </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="p-4 rounded-full bg-emerald-50 text-emerald-700">
+                                        <Clock className="w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <p className="text-stone-500 font-medium text-sm mb-1 uppercase tracking-wider">Hours</p>
+                                        <div className="text-stone-900 font-semibold text-base space-y-1">
+                                            <p>Mon – Fri: 8:00am – 4:30pm</p>
+                                            <p>Saturday: 8:00am – 12:00pm</p>
+                                            <p className="text-stone-400 font-normal">Sunday: Closed</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +114,24 @@ export default function Contact() {
                         </form>
                     </motion.div>
                 </div>
+
+                {/* Shipping & Handling */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="mt-12 bg-white p-10 rounded-[2rem] border border-stone-100"
+                >
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="p-4 rounded-full bg-emerald-50 text-emerald-700">
+                            <Truck className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-stone-900">Shipping &amp; Handling</h3>
+                    </div>
+                    <p className="text-stone-600 text-lg font-light leading-relaxed max-w-3xl">
+                        We will fill your order and arrange the shipping. We do our best to fill all orders with delicacy and care. If a plant is not available, we will contact you to find a quality substitution that meets your needs. Shipping can be arranged with a dependable hauler that you trust.
+                    </p>
+                </motion.div>
             </div>
         </main>
     );

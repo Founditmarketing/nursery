@@ -38,7 +38,17 @@ export default function Footer() {
                             <li>
                                 <div className="flex items-start gap-4">
                                     <MapPin className="w-5 h-5 shrink-0 mt-0.5 text-stone-600" />
-                                    <span className="font-light leading-relaxed text-stone-400">Lecompte, Louisiana<br />Serving LA & Surrounding States</span>
+                                    <span className="font-light leading-relaxed text-stone-400">Lecompte, Louisiana<br />Serving LA &amp; Surrounding States</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="flex items-start gap-4">
+                                    <span className="text-stone-600 shrink-0 mt-0.5">🕐</span>
+                                    <span className="font-light leading-relaxed text-stone-400">
+                                        Mon–Fri: 8am–4:30pm<br />
+                                        Sat: 8am–12pm<br />
+                                        Sun: Closed
+                                    </span>
                                 </div>
                             </li>
                         </ul>
