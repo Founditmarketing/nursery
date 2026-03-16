@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import Gallery from './pages/Gallery';
 import PlantList from './pages/PlantList';
+import CategoryPage from './pages/CategoryPage';
 import ScrollToHashElement from './components/ScrollToHash';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/plant-list" element={<PlantList />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
         </Routes>
       </div>
 

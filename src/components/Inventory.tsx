@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom';
 
 export default function Inventory() {
     const categories = [
-        { name: 'Azaleas', img: '/images/inventory_azalea.png' },
-        { name: 'Ground Cover', img: '/images/inventory_ground_cover.png' },
-        { name: 'Juniper', img: '/images/inventory_juniper.png' },
-        { name: 'Ornamental Grass', img: '/images/inventory_ornamental_grass.png' },
-        { name: 'Boxwood', img: '/images/inventory_boxwood.png' },
-        { name: 'Perennials', img: '/images/inventory_perennials.png' },
-        { name: 'Trees', img: '/images/inventory_trees.png' },
-        { name: 'Gardenia', img: '/images/inventory_gardenia.png' },
+        { name: 'Ground Cover', img: '/images/Screen-Shot-2020-05-18-at-8.19.54-PM-2.png' },
+        { name: 'Azaleas', img: '/images/Screen-Shot-2020-08-11-at-10.30.49-AM.png' },
+        { name: 'Juniper', img: '/images/juniper-spiral.jpeg' },
+        { name: 'Ornamental Grass', img: '/images/grass-boxwood.jpeg' },
+        { name: 'Boxwood', img: '/images/Screen-Shot-2020-08-11-at-10.29.11-AM.png' },
+        { name: 'Ligustrum', img: '/images/Screen-Shot-2020-08-11-at-10.28.36-AM.png' },
+        { name: 'Perennials', img: '/images/shrubs-palms.jpeg' },
+        { name: 'Gardenia', img: '/images/Screen-Shot-2020-08-11-at-10.27.15-AM.png' },
+        { name: 'Trees', img: '/images/juniper-rows.jpeg' },
+        { name: 'Abelia', img: '/images/Screen-Shot-2020-08-11-at-11.18.48-AM.png' },
+        { name: 'Hollies', img: '/images/Screen-Shot-2020-06-03-at-5.09.11-PM.png' },
     ];
 
     return (
@@ -50,7 +53,7 @@ export default function Inventory() {
                             transition={{ duration: 0.6, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
                             className="will-change-transform"
                         >
-                            <Link to="/contact" className="group relative h-80 rounded-[2rem] overflow-hidden block shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
+                            <Link to={`/category/${category.name.toLowerCase().replace(/ /g, '-')}`} className="group relative h-80 rounded-[2rem] overflow-hidden block shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] transition-all duration-500">
                                 <img
                                     src={category.img}
                                     alt={category.name}
@@ -72,20 +75,37 @@ export default function Inventory() {
                             </Link>
                         </motion.div>
                     ))}
+
+                    {/* Final Module: View Complete Catalog */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        whileHover={{
+                            y: -12,
+                            scale: 1.01,
+                            rotateZ: 1,
+                        }}
+                        viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                        transition={{ duration: 0.6, delay: categories.length * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                        className="will-change-transform"
+                    >
+                        <Link to="/catalog" className="group relative h-80 rounded-[2rem] overflow-hidden block shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.4)] transition-all duration-500 bg-emerald-700 flex flex-col items-center justify-center text-center p-8">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent)] pointer-events-none" />
+                            
+                            <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/30 transition-all duration-500 shadow-xl border border-white/30">
+                                <ArrowRight className="w-8 h-8 text-white group-hover:translate-x-1 transition-transform duration-300" />
+                            </div>
+                            
+                            <h4 className="text-white font-medium text-2xl tracking-wide group-hover:-translate-y-1 group-hover:drop-shadow-lg transition-transform duration-500">
+                                View Complete Catalog
+                            </h4>
+                            <p className="text-emerald-100 font-light mt-4 text-sm max-w-[200px] opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                Explore our full selection of plants and trees.
+                            </p>
+                        </Link>
+                    </motion.div>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 0.6 }}
-                    className="mt-16 text-center"
-                >
-                    <Link to="/catalog" className="inline-flex items-center gap-3 text-emerald-800 font-semibold hover:text-emerald-600 transition-colors uppercase tracking-widest text-sm group">
-                        View Complete Catalog
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-                    </Link>
-                </motion.div>
             </div>
         </section>
     );

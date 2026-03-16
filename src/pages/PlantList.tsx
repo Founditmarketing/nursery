@@ -4,23 +4,143 @@ import { Download, FileText } from 'lucide-react';
 export default function PlantList() {
     const listCategories = [
         {
-            title: "Premium Shrubs",
+            title: "Ground Cover",
             items: [
-                { name: "Azalea 'Fashion'", sizes: ["1 Gal", "3 Gal", "7 Gal"] },
-                { name: "Azalea 'George Taber'", sizes: ["3 Gal", "7 Gal"] },
-                { name: "Boxwood 'Wintergem'", sizes: ["1 Gal", "3 Gal"] },
-                { name: "Cleyera Japonica", sizes: ["3 Gal", "7 Gal", "15 Gal"] },
-                { name: "Gardenia 'August Beauty'", sizes: ["3 Gal", "7 Gal"] },
+                { name: "Aspidistria", sizes: ["1 Gallon", "3 Gallon"] },
+                { name: "Giant Liriope", sizes: ["1 Gallon", "3 Gallon"] },
+                { name: "Green Liriope", sizes: ["4 Inch", "1 Gallon"] },
+                { name: "Jasmine Asian", sizes: ["4 Inch", "1 Gallon"] },
+                { name: "Mondo Dwarf", sizes: ["4 Inch", "1 Gallon"] },
+                { name: "Mondo Regular", sizes: ["4 Inch", "1 Gallon"] },
+                { name: "V. Liriope", sizes: ["4 Inch", "1 Gallon"] },
+                { name: "Super Blue", sizes: ["1 Gallon", "3 Gallon"] },
             ]
         },
         {
-            title: "Trees & Accents",
+            title: "Ornamental Grass",
             items: [
-                { name: "Crape Myrtle 'Natchez'", sizes: ["15 Gal", "30 Gal"] },
-                { name: "Live Oak", sizes: ["15 Gal", "30 Gal", "45 Gal"] },
-                { name: "Magnolia 'Little Gem'", sizes: ["15 Gal", "30 Gal"] },
-                { name: "Ornamental Grass (Assorted)", sizes: ["1 Gal", "3 Gal"] },
-                { name: "Juniper 'Blue Pacific'", sizes: ["1 Gal", "3 Gal"] },
+                { name: "Adagio", sizes: ["3 Gallon"] },
+                { name: "Hamelin Dwarf", sizes: [] },
+                { name: "Mexican Feather Grass", sizes: [] },
+                { name: "Miscanthus Regular", sizes: ["3 Gallon"] },
+                { name: "Miscanthus Var.", sizes: ["3 Gallon"] },
+                { name: "Muhly Lindheimer", sizes: ["3 Gallon"] },
+                { name: "Muhly Pink", sizes: ["3 Gallon"] },
+            ]
+        },
+        {
+            title: "Perennials",
+            items: [
+                { name: "Agapanthus Blue", sizes: ["1 Gallon", "3 Gallon"] },
+                { name: "Agapanthus White", sizes: [] },
+                { name: "Fox Tail Fern", sizes: ["1 Gallon", "3 Gallon"] },
+                { name: "Iris African", sizes: [] },
+                { name: "Iris Bi-Color", sizes: ["3 Gallon"] },
+                { name: "Lantana Lavender", sizes: ["1 Gallon"] },
+                { name: "Lantana Red", sizes: ["1 Gallon"] },
+                { name: "Lantana Yellow", sizes: ["1 Gallon"] },
+                { name: "Lantana White", sizes: [] },
+                { name: "Rosemary Creeping", sizes: [] },
+                { name: "Rosemary Upright", sizes: ["3 Gallon"] },
+                { name: "Sage Mexican Bush", sizes: ["3 Gallon"] },
+                { name: "Salvia Greggi Red", sizes: ["3 Gallon"] },
+                { name: "Skullcap Pink", sizes: ["1 Gallon"] },
+                { name: "Society Garlic", sizes: ["1 Gallon"] },
+                { name: "Yellow Iris", sizes: [] },
+            ]
+        },
+        {
+            title: "Azaleas",
+            items: [
+                { name: "Fashion", sizes: ["3 Gallon"] },
+                { name: "Formosa", sizes: ["3 Gallon", "7 Gallon"] },
+                { name: "Pink Formosa", sizes: ["7 Gallon"] },
+                { name: "Red Formosa", sizes: ["7 Gallon"] },
+                { name: "GG Gerbing", sizes: ["3 Gallon"] },
+                { name: "George Tabor", sizes: ["3 Gallon"] },
+                { name: "Pink Ruffle", sizes: ["7 Gallon"] },
+                { name: "Red Ruffle", sizes: ["7 Gallon"] },
+            ]
+        },
+        {
+            title: "Shrubs / Abelia",
+            items: [
+                { name: "Edward Goucher", sizes: [] },
+                { name: "Frances Mason", sizes: [] },
+                { name: "Glossy", sizes: [] },
+                { name: "Kaleidoscope", sizes: [] },
+            ]
+        },
+        {
+            title: "Boxwood",
+            items: [
+                { name: "Japanese Boxwood", sizes: ["7 Gallon"] },
+                { name: "Wintergreen", sizes: ["3 Gallon", "7 Gallon"] },
+            ]
+        },
+        {
+            title: "Gardenia",
+            items: [
+                { name: "August Beauty", sizes: ["3 Gallon"] },
+                { name: "Frost Proof", sizes: ["3 Gallon"] },
+                { name: "Radican", sizes: ["3 Gallon"] },
+            ]
+        },
+        {
+            title: "Hollies",
+            items: [
+                { name: "Burford Dwarf", sizes: ["3 Gallon"] },
+                { name: "Carissa", sizes: ["3 Gallon"] },
+                { name: "Coned Compacta", sizes: ["3 Gallon"] },
+                { name: "Needle Point", sizes: ["3 Gallon"] },
+                { name: "Nellie R Stephens", sizes: ["3 Gallon"] },
+                { name: "Sky Pencil", sizes: ["3 Gallon", "7 Gallon"] },
+                { name: "Yaupon Dwarf", sizes: ["3 Gallon"] },
+                { name: "Yaupon Upright", sizes: ["15 Gallon"] },
+            ]
+        },
+        {
+            title: "Juniper",
+            items: [
+                { name: "Andorra", sizes: ["1 Gallon", "3 Gallon"] },
+                { name: "Bar Harbor", sizes: ["1 Gallon", "3 Gallon"] },
+                { name: "Blue Pacific", sizes: ["15 Gallon"] },
+                { name: "Blue Point", sizes: [] },
+                { name: "Parsoni", sizes: [] },
+            ]
+        },
+        {
+            title: "Ligustrum",
+            items: [
+                { name: "Howardi", sizes: ["7 Gallon"] },
+                { name: "Wax", sizes: [] },
+                { name: "Acuba Gold Dust", sizes: ["7 Gallon"] },
+                { name: "Cleyera Japonica", sizes: ["3 Gallon"] },
+                { name: "Don's Dwarf Wax Myrtle", sizes: ["3 Gallon"] },
+                { name: "Eleagnus", sizes: ["3 Gallon", "7 Gallon", "15 Gallon"] },
+                { name: "Japanese Yew", sizes: ["7 Gallon"] },
+                { name: "Loropetalum", sizes: ["3 Gallon", "7 Gallon"] },
+                { name: "Palmetto Dwarf", sizes: [] },
+            ]
+        },
+        {
+            title: "Other Shrubs",
+            items: [
+                { name: "Pittosporum Dwarf", sizes: ["3 Gallon", "7 Gallon", "15 Gallon"] },
+                { name: "Pittosporum Var.", sizes: ["3 Gallon"] },
+                { name: "Shi Shi", sizes: ["3 Gallon", "7 Gallon"] },
+                { name: "Sweet Olive", sizes: ["7 Gallon"] },
+                { name: "Var. Privitt", sizes: [] },
+            ]
+        },
+        {
+            title: "Trees",
+            items: [
+                { name: "Crape Myrtle Basham", sizes: [] },
+                { name: "Crape Myrtle Natchez", sizes: [] },
+                { name: "Crape Myrtle Tuscorora", sizes: ["15 Gallon"] },
+                { name: "Magnolia Little Jem", sizes: ["5 Gal"] },
+                { name: "Oak Live", sizes: ["4 Inch"] },
             ]
         }
     ];

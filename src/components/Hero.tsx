@@ -40,14 +40,16 @@ export default function Hero() {
                 style={{ y: yBackground }}
                 className="absolute inset-0 z-0 origin-top"
             >
-                <motion.img
+                <motion.video
                     initial={{ scale: 1.15 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-                    src="/images/hero.png"
-                    alt="Greenhouse interior with lush plants"
+                    src="/hero-video.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-stone-950/40 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-900/40 to-stone-950/90" />
@@ -55,7 +57,7 @@ export default function Hero() {
 
             <motion.div
                 style={{ y: yText, opacity: opacityText }}
-                className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12"
+                className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12 pb-64"
             >
                 <motion.div className="max-w-4xl mx-auto flex flex-col items-center">
 

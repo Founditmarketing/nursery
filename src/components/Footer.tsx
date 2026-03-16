@@ -6,9 +6,12 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
                     <div className="lg:col-span-2">
-                        <div className="flex items-center gap-3 mb-8 group cursor-pointer w-fit" onClick={() => window.scrollTo(0, 0)}>
-                            <Leaf className="w-8 h-8 text-emerald-600 group-hover:text-emerald-500 transition-colors" />
-                            <span className="text-3xl font-bold text-white tracking-tight">Southern Roots</span>
+                        <div className="flex items-center mb-8 group cursor-pointer w-fit" onClick={() => window.scrollTo(0, 0)}>
+                            <img
+                                src="/images/logo.png"
+                                alt="RoxAnne's Southern Roots Nursery"
+                                className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 opacity-90 hover:opacity-100"
+                            />
                         </div>
                         <p className="max-w-md mb-10 leading-relaxed font-light text-stone-500 text-lg">
                             Louisiana based wholesale nursery serving designers, architects, landscape contractors, and retail customers with exceptional plant material.

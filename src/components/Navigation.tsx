@@ -6,6 +6,8 @@ import { Link, useLocation } from 'react-router-dom';
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,27 +27,23 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            <Link to="/" className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-              <Leaf
-                className={`w-8 h-8 transition-colors duration-500 ${isScrolled ? 'text-emerald-700' : 'text-emerald-400 group-hover:text-emerald-300'
-                  }`}
+            <Link to="/" className="flex items-center group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+              <img
+                src="/images/logo.png"
+                alt="RoxAnne's Southern Roots Nursery"
+                className="h-14 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
               />
-              <span
-                className={`text-xl font-bold tracking-tight transition-colors duration-500 ${isScrolled ? 'text-stone-900' : 'text-white'
-                  }`}
-              >
-                Southern Roots
-              </span>
             </Link>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              <Link to="/about" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>About</Link>
-              <Link to="/catalog" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Catalog</Link>
-              <Link to="/plant-list" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Plant List</Link>
-              <Link to="/gallery" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Gallery</Link>
-              <Link to="/#specials" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Specials</Link>
-              <Link to="/#reviews" className={`text-sm font-medium transition-all duration-300 ${isScrolled ? 'text-stone-600 hover:text-emerald-700' : 'text-stone-200 hover:text-white hover:text-shadow-sm'}`}>Reviews</Link>
+              <Link to="/" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>Home</Link>
+              <Link to="/about" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>About</Link>
+              <Link to="/catalog" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>Catalog</Link>
+              <Link to="/plant-list" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>Plant List</Link>
+              <Link to="/gallery" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>Gallery</Link>
+              <Link to="/#specials" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>Specials</Link>
+              <Link to="/#reviews" className={`text-sm font-medium transition-all duration-300 ${isHomePage && !isScrolled ? 'text-stone-200 hover:text-white hover:text-shadow-sm' : 'text-stone-600 hover:text-emerald-700'}`}>Reviews</Link>
 
               <Link
                 to="/contact"
@@ -61,9 +59,9 @@ export default function Navigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className={isScrolled ? 'text-stone-900' : 'text-white'} />
+                <X className={isHomePage && !isScrolled ? 'text-white' : 'text-stone-900'} />
               ) : (
-                <Menu className={isScrolled ? 'text-stone-900' : 'text-white'} />
+                <Menu className={isHomePage && !isScrolled ? 'text-white' : 'text-stone-900'} />
               )}
             </button>
           </div>
@@ -81,6 +79,9 @@ export default function Navigation() {
             className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24 px-4"
           >
             <div className="flex flex-col gap-6 text-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05, duration: 0.4 }}>
+                <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">Home</Link>
+              </motion.div>
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.4 }}>
                 <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-serif italic text-stone-800 hover:text-emerald-700 transition-colors">About</Link>
               </motion.div>

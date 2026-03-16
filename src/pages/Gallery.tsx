@@ -1,22 +1,28 @@
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { X } from 'lucide-react';
 
 export default function Gallery() {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
     // Reusing our beautiful generated images to populate the gallery
     const images = [
-        { src: '/images/hero.png', alt: 'Greenhouse interior', size: 'large' },
-        { src: '/images/inventory_azalea.png', alt: 'Azaleas', size: 'regular' },
-        { src: '/images/nursery_about.png', alt: 'Nursery workers holding plants', size: 'wide' },
-        { src: '/images/inventory_trees.png', alt: 'Trees', size: 'tall' },
-        { src: '/images/inventory_boxwood.png', alt: 'Boxwood shrubs', size: 'regular' },
-        { src: '/images/inventory_ornamental_grass.png', alt: 'Ornamental Grass', size: 'regular' },
-        { src: '/images/inventory_gardenia.png', alt: 'Gardenia flowers', size: 'wide' },
-        { src: '/images/inventory_juniper.png', alt: 'Juniper shrubs', size: 'regular' },
-        { src: '/images/inventory_ground_cover.png', alt: 'Ground cover plants', size: 'regular' },
-        { src: '/images/inventory_perennials.png', alt: 'Perennials blooming', size: 'tall' },
+        { src: '/images/juniper-spiral.jpeg', alt: 'Spiral Juniper Topiary', size: 'large' },
+        { src: '/images/grass-boxwood.jpeg', alt: 'Ornamental Grass and Boxwoods', size: 'regular' },
+        { src: '/images/Screen-Shot-2020-08-11-at-10.28.36-AM.png', alt: 'Nursery rows', size: 'wide' },
+        { src: '/images/juniper-rows.jpeg', alt: 'Rows of Trees', size: 'tall' },
+        { src: '/images/Screen-Shot-2020-08-11-at-10.29.11-AM.png', alt: 'Boxwood shrubs', size: 'regular' },
+        { src: '/images/shrubs-palms.jpeg', alt: 'Perennials and Palms', size: 'regular' },
+        { src: '/images/Screen-Shot-2020-08-11-at-10.27.15-AM.png', alt: 'Gardenia flowers', size: 'wide' },
+        { src: '/images/Screen-Shot-2021-11-05-at-1.08.11-PM.png', alt: 'Nursery plants', size: 'regular' },
+        { src: '/images/Screen-Shot-2020-08-11-at-10.28.21-AM.png', alt: 'Green Shrubs', size: 'regular' },
+        { src: '/images/Screen-Shot-2020-08-11-at-11.18.48-AM.png', alt: 'Lush greenery', size: 'tall' },
+        { src: '/images/Screen-Shot-2020-08-11-at-10.30.49-AM.png', alt: 'Vibrant Azaleas', size: 'regular' },
+        { src: '/images/Screen-Shot-2020-06-03-at-5.09.11-PM.png', alt: 'Healthy Hollies', size: 'regular' },
     ];
 
     return (
-        <main className="pt-32 pb-24 min-h-screen bg-stone-100 film-grain">
+        <main className="pt-32 pb-24 min-h-screen bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -48,7 +54,8 @@ export default function Gallery() {
                                 whileHover={{ scale: 1.02 }}
                                 viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                                 transition={{ duration: 0.5, delay: (index % 5) * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                                className={`rounded-[2rem] overflow-hidden group shadow-md hover:shadow-2xl transition-shadow ${spanClass}`}
+                                className={`rounded-[2rem] overflow-hidden group shadow-md hover:shadow-2xl transition-shadow cursor-pointer ${spanClass}`}
+                                onClick={() => setSelectedImage(img.src)}
                             >
                                 <img
                                     src={img.src}
@@ -56,12 +63,44 @@ export default function Gallery() {
                                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                     loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
                             </motion.div>
                         );
                     })}
                 </div>
             </div>
+
+            {/* Fullscreen Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8 cursor-zoom-out"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button 
+                            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full cursor-pointer"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedImage(null);
+                            }}
+                        >
+                            <X className="w-8 h-8" />
+                        </button>
+                        <motion.img
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            src={selectedImage}
+                            alt="Enlarged gallery view"
+                            className="max-w-full max-h-full object-contain cursor-default rounded-lg shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </main>
     );
 }
