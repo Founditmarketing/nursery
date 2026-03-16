@@ -1,4 +1,6 @@
 import { Leaf, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 
 export default function Footer() {
     return (
@@ -45,12 +47,18 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-8 uppercase tracking-[0.2em] text-xs">Quick Links</h4>
                         <ul className="space-y-4 font-light text-stone-500">
-                            {['About Us', 'Plant Catalog', 'Weekly Specials', 'Shipping Info'].map((link) => (
-                                <li key={link}>
-                                    <a href="#" className="hover:text-white transition-colors flex items-center gap-2 group">
+                            {[
+                                { label: 'About Us', to: '/about' },
+                                { label: 'Plant Catalog', to: '/catalog' },
+                                { label: 'Plant List', to: '/plant-list' },
+                                { label: 'Gallery', to: '/gallery' },
+                                { label: 'Contact Us', to: '/contact' },
+                            ].map(({ label, to }) => (
+                                <li key={label}>
+                                    <Link to={to} className="hover:text-white transition-colors flex items-center gap-2 group">
                                         <span className="w-1 h-1 rounded-full bg-stone-700 group-hover:bg-emerald-500 transition-colors" />
-                                        {link}
-                                    </a>
+                                        {label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
