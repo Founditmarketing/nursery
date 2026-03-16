@@ -153,12 +153,15 @@ export default function PlantList() {
         const q = query.toLowerCase().trim();
         return listCategories
             .filter(cat => !activeType || cat.title === activeType)
-            .map(cat => ({
-                ...cat,
-                items: cat.items.filter(item =>
-                    !q || item.name.toLowerCase().includes(q)
-                ),
-            }))
+            .map(cat => {
+                const categoryMatch = q && cat.title.toLowerCase().includes(q);
+                return {
+                    ...cat,
+                    items: cat.items.filter(item =>
+                        !q || categoryMatch || item.name.toLowerCase().includes(q)
+                    ),
+                };
+            })
             .filter(cat => cat.items.length > 0);
     }, [query, activeType]);
 
