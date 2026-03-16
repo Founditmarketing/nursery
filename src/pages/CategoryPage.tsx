@@ -22,7 +22,7 @@ export default function CategoryPage() {
     const categoriesData: Record<string, CategoryData> = {
         'ground-cover': { 
             title: 'Ground Cover', 
-            img: '/images/Screen-Shot-2020-05-18-at-8.19.54-PM-2.png',
+            img: '/images/inventory_ground_cover.png',
             description: 'Provide an elegant, low-maintenance foundation for your landscape design.',
             items: [
                 { name: 'Aspidistria', img: '/images/ground-cover/aspidistria.jpg' },
@@ -37,52 +37,52 @@ export default function CategoryPage() {
         },
         'azaleas': { 
             title: 'Azaleas', 
-            img: '/images/Screen-Shot-2020-08-11-at-10.30.49-AM.png',
+            img: '/images/inventory_azalea.png',
             description: 'Vibrant, blooming shrubs perfect for adding dramatic color to southern gardens.' 
         },
         'juniper': { 
             title: 'Juniper', 
-            img: '/images/juniper-spiral.jpeg',
+            img: '/images/inventory_juniper.png',
             description: 'Hardy evergreen shrubs ideal for borders, accents, and ground coverage.' 
         },
         'ornamental-grass': { 
             title: 'Ornamental Grass', 
-            img: '/images/grass-boxwood.jpeg',
+            img: '/images/inventory_ornamental_grass.png',
             description: 'Add texture, movement, and graceful structure to your landscape.' 
         },
         'boxwood': { 
             title: 'Boxwood', 
-            img: '/images/Screen-Shot-2020-08-11-at-10.29.11-AM.png',
+            img: '/images/inventory_boxwood.png',
             description: 'Classic, dense evergreen shrubs perfect for formal hedges and topiary designs.' 
         },
         'ligustrum': { 
             title: 'Ligustrum', 
-            img: '/images/Screen-Shot-2020-08-11-at-10.28.36-AM.png',
+            img: '/images/inventory_ligustrum.png',
             description: 'Fast-growing evergreen shrubs that excel as privacy screens and hedges.' 
         },
         'perennials': { 
             title: 'Perennials', 
-            img: '/images/shrubs-palms.jpeg',
+            img: '/images/inventory_perennials.png',
             description: 'Reliable plants that return year after year, providing continuous seasonal interest.' 
         },
         'gardenia': { 
             title: 'Gardenia', 
-            img: '/images/Screen-Shot-2020-08-11-at-10.27.15-AM.png',
+            img: '/images/inventory_gardenia.png',
             description: 'Beloved for their intoxicating fragrance and elegant, contrasting white blooms.' 
         },
         'trees': { 
             title: 'Trees', 
-            img: '/images/juniper-rows.jpeg',
+            img: '/images/inventory_trees.png',
             description: 'Establish the structural footprint of your landscape with our premium trees.' 
         },
         'abelia': { 
             title: 'Abelia', 
-            img: '/images/Screen-Shot-2020-08-11-at-11.18.48-AM.png',
+            img: '/images/inventory_abelia.png',
             description: 'Graceful, arching shrubs offering long-lasting blooms and attractive foliage.' 
         },
         'hollies': { 
             title: 'Hollies', 
-            img: '/images/Screen-Shot-2020-06-03-at-5.09.11-PM.png',
+            img: '/images/inventory_hollies.png',
             description: 'Durable, versatile evergreens that provide excellent structure and winter interest.' 
         },
     };

@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 
 export default function Inventory() {
     const categories = [
-        { name: 'Ground Cover', img: '/images/Screen-Shot-2020-05-18-at-8.19.54-PM-2.png' },
-        { name: 'Azaleas', img: '/images/Screen-Shot-2020-08-11-at-10.30.49-AM.png' },
-        { name: 'Juniper', img: '/images/juniper-spiral.jpeg' },
-        { name: 'Ornamental Grass', img: '/images/grass-boxwood.jpeg' },
-        { name: 'Boxwood', img: '/images/Screen-Shot-2020-08-11-at-10.29.11-AM.png' },
-        { name: 'Ligustrum', img: '/images/Screen-Shot-2020-08-11-at-10.28.36-AM.png' },
-        { name: 'Perennials', img: '/images/shrubs-palms.jpeg' },
-        { name: 'Gardenia', img: '/images/Screen-Shot-2020-08-11-at-10.27.15-AM.png' },
-        { name: 'Trees', img: '/images/juniper-rows.jpeg' },
-        { name: 'Abelia', img: '/images/Screen-Shot-2020-08-11-at-11.18.48-AM.png' },
-        { name: 'Hollies', img: '/images/Screen-Shot-2020-06-03-at-5.09.11-PM.png' },
+        { name: 'Ground Cover', img: '/images/inventory_ground_cover.png' },
+        { name: 'Azaleas', img: '/images/inventory_azalea.png' },
+        { name: 'Juniper', img: '/images/inventory_juniper.png' },
+        { name: 'Ornamental Grass', img: '/images/inventory_ornamental_grass.png' },
+        { name: 'Boxwood', img: '/images/inventory_boxwood.png' },
+        { name: 'Ligustrum', img: '/images/inventory_ligustrum.png' },
+        { name: 'Perennials', img: '/images/inventory_perennials.png' },
+        { name: 'Gardenia', img: '/images/inventory_gardenia.png' },
+        { name: 'Trees', img: '/images/inventory_trees.png' },
+        { name: 'Abelia', img: '/images/inventory_abelia.png' },
+        { name: 'Hollies', img: '/images/inventory_hollies.png' },
     ];
 
     return (
