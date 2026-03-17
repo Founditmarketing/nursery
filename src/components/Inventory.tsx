@@ -1,8 +1,8 @@
 import { motion } from 'motion/react';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function Inventory() {
+export default function Inventory({ hideCatalogCard = false }: { hideCatalogCard?: boolean }) {
     const categories = [
         { name: 'Ground Cover', img: '/images/inventory_ground_cover.png' },
         { name: 'Azaleas', img: '/images/inventory_azalea.png' },
@@ -75,6 +75,30 @@ export default function Inventory() {
                         </motion.div>
                     ))}
 
+                    {/* Final Module: View Complete Catalog */}
+                    {!hideCatalogCard && (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            whileHover={{ y: -12, scale: 1.01 }}
+                            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                            transition={{ duration: 0.6, delay: categories.length * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                            className="will-change-transform"
+                        >
+                            <Link to="/catalog" className="group relative h-80 rounded-[2rem] overflow-hidden block shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.4)] transition-all duration-500 bg-emerald-700 flex flex-col items-center justify-center text-center p-8">
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent)] pointer-events-none" />
+                                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/30 transition-all duration-500 shadow-xl border border-white/30">
+                                    <ArrowRight className="w-8 h-8 text-white group-hover:translate-x-1 transition-transform duration-300" />
+                                </div>
+                                <h4 className="text-white font-medium text-2xl tracking-wide group-hover:-translate-y-1 group-hover:drop-shadow-lg transition-transform duration-500">
+                                    View Complete Catalog
+                                </h4>
+                                <p className="text-emerald-100 font-light mt-4 text-sm max-w-[200px] opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                    Explore our full selection of plants and trees.
+                                </p>
+                            </Link>
+                        </motion.div>
+                    )}
                 </div>
 
             </div>

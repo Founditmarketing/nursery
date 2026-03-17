@@ -23,7 +23,7 @@ export default function Catalog() {
                 </div>
             </div>
             {/* Grey bottom section — Inventory brings its own bg-stone-100 and py-32 top padding */}
-            <Inventory />
+            <Inventory hideCatalogCard />
         </main>
     );
 }
