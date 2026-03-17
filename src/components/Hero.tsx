@@ -84,7 +84,7 @@ export default function Hero() {
                                 <motion.span key={`w1-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
                         </div>
-                        <div className="flex overflow-hidden py-1 px-1 text-emerald-400 italic font-serif">
+                        <div className="flex overflow-hidden pt-1 pb-3 px-1 text-emerald-400 italic font-serif">
                             {titleWords2.map((char, index) => (
                                 <motion.span key={`w2-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
@@ -94,7 +94,7 @@ export default function Hero() {
                                 <motion.span key={`w3-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
                         </div>
-                        <div className="flex overflow-hidden py-1 px-1 text-emerald-400 italic font-serif">
+                        <div className="flex overflow-hidden pt-1 pb-3 px-1 text-emerald-400 italic font-serif">
                             {titleWords4.map((char, index) => (
                                 <motion.span key={`w4-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
