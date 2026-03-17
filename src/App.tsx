@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -12,9 +13,16 @@ import PlantList from './pages/PlantList';
 import CategoryPage from './pages/CategoryPage';
 import ScrollToHashElement from './components/ScrollToHash';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-stone-50 font-sans text-stone-900 selection:bg-emerald-200 selection:text-emerald-900 flex flex-col">
+      <ScrollToTop />
       <ScrollToHashElement />
       <Navigation />
 
