@@ -66,6 +66,13 @@ export default function CategoryPage() {
             title: 'Juniper',
             img: '/images/inventory_juniper.png',
             description: 'Hardy evergreen shrubs ideal for borders, accents, and ground coverage.',
+            varieties: [
+                { name: 'Andorra', sizes: '1 Gallon, 3 Gallon' },
+                { name: 'Bar Harbor', sizes: '1 Gallon, 3 Gallon' },
+                { name: 'Blue Pacific', sizes: '15 Gallon' },
+                { name: 'Blue Point', sizes: 'Call for availability' },
+                { name: 'Parsoni', sizes: 'Call for availability' },
+            ]
         },
         'ornamental-grass': {
             title: 'Ornamental Grass',
@@ -125,6 +132,11 @@ export default function CategoryPage() {
             title: 'Gardenia',
             img: '/images/inventory_gardenia.png',
             description: 'Beloved for their intoxicating fragrance and elegant, contrasting white blooms.',
+            varieties: [
+                { name: 'August Beauty', sizes: '3 Gallon' },
+                { name: 'Frost Proof', sizes: '3 Gallon' },
+                { name: 'Radican', sizes: '3 Gallon' },
+            ]
         },
         'trees': {
             title: 'Trees',
