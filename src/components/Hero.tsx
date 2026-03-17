@@ -79,22 +79,22 @@ export default function Hero() {
                         className="text-6xl md:text-8xl font-bold text-white tracking-tight mb-8 leading-[1.1] flex flex-wrap justify-center gap-x-4 gap-y-2"
                         style={{ perspective: 1000 }}
                     >
-                        <div className="flex overflow-hidden">
+                        <div className="flex overflow-hidden py-1 px-1">
                             {titleWords1.map((char, index) => (
                                 <motion.span key={`w1-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
                         </div>
-                        <div className="flex overflow-hidden text-emerald-400 italic font-serif">
+                        <div className="flex overflow-hidden py-1 px-1 text-emerald-400 italic font-serif">
                             {titleWords2.map((char, index) => (
                                 <motion.span key={`w2-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
                         </div>
-                        <div className="flex overflow-hidden">
+                        <div className="flex overflow-hidden py-1 px-1">
                             {titleWords3.map((char, index) => (
                                 <motion.span key={`w3-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
                         </div>
-                        <div className="flex overflow-hidden text-emerald-400 italic font-serif">
+                        <div className="flex overflow-hidden py-1 px-1 text-emerald-400 italic font-serif">
                             {titleWords4.map((char, index) => (
                                 <motion.span key={`w4-${index}`} variants={letterAnimation} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>{char}</motion.span>
                             ))}
