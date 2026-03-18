@@ -25,13 +25,13 @@ export default function Navigation() {
           : 'bg-transparent py-6'
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <Link to="/" className="flex items-center group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
               <img
                 src="/images/logo.png"
                 alt="RoxAnne's Southern Roots Nursery"
-                className="h-14 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+                className="h-14 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
               />
             </Link>
 

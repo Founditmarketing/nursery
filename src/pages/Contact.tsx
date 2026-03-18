@@ -1,7 +1,43 @@
+import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Truck } from 'lucide-react';
 
 export default function Contact() {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+        
+        try {
+            const res = await fetch('/api/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: `${firstName} ${lastName}`.trim(),
+                    email,
+                    message
+                })
+            });
+            
+            if (res.ok) {
+                setStatus('success');
+                setFirstName('');
+                setLastName('');
+                setEmail('');
+                setMessage('');
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
+
     return (
         <main className="pt-32 pb-24 min-h-screen bg-stone-100 film-grain">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,29 +125,42 @@ export default function Contact() {
                         className="bg-white p-10 md:p-14 rounded-[2rem] shadow-xl border border-stone-100"
                     >
                         <h3 className="text-3xl font-bold text-stone-900 mb-8 font-serif italic">Send an Inquiry</h3>
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        {status === 'success' ? (
+                            <div className="bg-emerald-50 text-emerald-800 p-6 rounded-xl border border-emerald-200 mb-6">
+                                <h4 className="text-xl font-bold mb-2">Message Sent!</h4>
+                                <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
+                                <button onClick={() => setStatus('idle')} className="mt-4 text-emerald-700 font-semibold hover:underline">Send another message</button>
+                            </div>
+                        ) : (
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid sm:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-stone-700 ml-1">First Name</label>
-                                    <input type="text" className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all" placeholder="John" />
+                                    <input value={firstName} onChange={e => setFirstName(e.target.value)} required type="text" className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all" placeholder="John" />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-stone-700 ml-1">Last Name</label>
-                                    <input type="text" className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all" placeholder="Doe" />
+                                    <input value={lastName} onChange={e => setLastName(e.target.value)} required type="text" className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all" placeholder="Doe" />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-semibold text-stone-700 ml-1">Email Address</label>
-                                <input type="email" className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all" placeholder="john@example.com" />
+                                <input value={email} onChange={e => setEmail(e.target.value)} required type="email" className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all" placeholder="john@example.com" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-semibold text-stone-700 ml-1">Message</label>
-                                <textarea rows={5} className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all resize-none" placeholder="How can we help you?" />
+                                <textarea value={message} onChange={e => setMessage(e.target.value)} required rows={5} className="w-full bg-stone-50 border border-stone-200 rounded-xl px-5 py-4 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all resize-none" placeholder="How can we help you?" />
                             </div>
-                            <button className="w-full bg-emerald-700 hover:bg-emerald-600 text-white font-semibold flex items-center justify-center py-4 rounded-xl transition-colors mt-4 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-300">
-                                Submit Inquiry
+                            
+                            {status === 'error' && (
+                                <p className="text-red-600 text-sm">There was an error sending your message. Please try again later.</p>
+                            )}
+
+                            <button disabled={status === 'loading'} className="w-full bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:hover:-translate-y-0 disabled:hover:shadow-lg disabled:cursor-not-allowed text-white font-semibold flex items-center justify-center py-4 rounded-xl transition-colors mt-4 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-300">
+                                {status === 'loading' ? 'Sending...' : 'Submit Inquiry'}
                             </button>
                         </form>
+                        )}
                     </motion.div>
                 </div>
 
