@@ -31,7 +31,9 @@ export default function Navigation() {
               <img
                 src="/images/logo.png"
                 alt="RoxAnne's Southern Roots Nursery"
-                className="h-14 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md"
+                className={`w-auto transition-all duration-300 group-hover:scale-105 drop-shadow-md ${
+                  isScrolled ? 'h-14 md:h-20' : 'h-16 md:h-28'
+                }`}
               />
             </Link>
 
