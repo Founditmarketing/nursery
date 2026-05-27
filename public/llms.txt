@@ -1,0 +1,27 @@
+# RoxAnne's Southern Roots Nursery (RSR Nursery)
+
+RoxAnne's Southern Roots Nursery is a Louisiana-based wholesale nursery serving landscape designers, architects, landscape contractors, and retail customers with exceptional plant material.
+
+## Main URL
+- https://www.rsrnursery.com
+
+## Main Routes
+- [/](https://www.rsrnursery.com/): Home page featuring nursery overview, services, values, and wholesale features.
+- [/about](https://www.rsrnursery.com/about): Our story, philosophy, and dedication to growing superior quality plant material.
+- [/catalog](https://www.rsrnursery.com/catalog): Main product catalog displaying our wholesale categories and descriptions.
+- [/plant-list](https://www.rsrnursery.com/plant-list): Complete searchable tabular view of all plant varieties, sizes, and availability.
+- [/gallery](https://www.rsrnursery.com/gallery): Photo gallery showcasing our healthy crop rows, field-grown trees, and nursery operations.
+- [/contact](https://www.rsrnursery.com/contact): Contact form, location map, phone numbers, email address, and physical location details.
+
+## Category Page Routes
+- [/category/ground-cover](https://www.rsrnursery.com/category/ground-cover): Ground Cover plants (e.g. Mondo dwarf/regular, Liriope green/giant/variegated, Asian Jasmine, Super Blue)
+- [/category/azaleas](https://www.rsrnursery.com/category/azaleas): Hardy and blooming Azalea varieties (e.g. George Tabor, Lavender Formosa)
+- [/category/juniper](https://www.rsrnursery.com/category/juniper): Evergreen Junipers (e.g. Andorra, Bar Harbor, Blue Pacific, Blue Point, Parsoni)
+- [/category/ornamental-grass](https://www.rsrnursery.com/category/ornamental-grass): Landscape grasses (e.g. Adagio, Miscanthus, Mexican Feather, Big Blue, Pink Muhly)
+- [/category/boxwood](https://www.rsrnursery.com/category/boxwood): Boxwoods for hedges and formal screens (e.g. Wintergreen)
+- [/category/ligustrum](https://www.rsrnursery.com/category/ligustrum): Ligustrum, Privet, and Yew options for borders and screens (e.g. Gold Dust Acuba, Japanese Yew, Eleagnus, Cleyera, Wax Myrtle, Howardi)
+- [/category/perennials](https://www.rsrnursery.com/category/perennials): Vibrant perennials returning year after year (e.g. Salvia, Lantana, Agapanthus, Rosemary, Iris, Fox Tail Fern)
+- [/category/gardenia](https://www.rsrnursery.com/category/gardenia): Highly fragrant classic Gardenias (e.g. August Beauty, Frost Proof, Radican)
+- [/category/trees](https://www.rsrnursery.com/category/trees): High-quality ornamental and shade trees (e.g. Little Jem Magnolia, Natchez Crape Myrtle, Loquat, Live Oak)
+- [/category/abelia](https://www.rsrnursery.com/category/abelia): Flowering arching shrubs (e.g. Glossy Abelia, Edward Goucher)
+- [/category/hollies](https://www.rsrnursery.com/category/hollies): Dense structural hollies (e.g. Needle Point, Oak Leaf, Sky Pencil, Nellie R. Stevens, Compacta)
